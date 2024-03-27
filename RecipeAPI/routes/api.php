@@ -15,17 +15,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// // Login user
+// Route::post('login', [AuthController::class, 'login']);
+// // Register user
+// Route::post('register', [AuthController::class, 'register']);
+
+// // If logged in...
+// Route::group(['middleware' => 'auth:sanctum'], function() {
+//     // Logout user
+//     Route::post('logout', [AuthController::class, 'logout']);
+//     // Get specific user details
+//     Route::get('getuser/{id}', [AuthController::class, 'getUser']);
+    
+//     // TODO: CRUD for recipe lists
+// });
+
 // Login user
-Route::post('login', [AuthController::class, 'login']);
+Route::post('login', [AuthController::class, 'login'])->name('login');
 // Register user
-Route::post('register', [AuthController::class, 'register']);
+Route::post('register', [AuthController::class, 'register'])->name('register');
 
 // If logged in...
 Route::group(['middleware' => 'auth:sanctum'], function() {
     // Logout user
-    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     // Get specific user details
-    Route::get('getuser/{id}', [AuthController::class, 'getUser']);
+    Route::get('getuser/{id}', [AuthController::class, 'getUser'])->name('getuser');
     
     // TODO: CRUD for recipe lists
 });
