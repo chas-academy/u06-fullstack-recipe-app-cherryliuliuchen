@@ -12,7 +12,8 @@
     <div class="mb-3">
         <input type="password" [(ngModel)]="passwordConfirmation" class="form-control" placeholder="Confirm Password" required>
     </div>
-    <button (click)="register()" class="btn btn-primary">Register</button>
+    <!-- <button (click)="register()" class="btn btn-primary">Register</button> -->
+    <button (click)="register()" class="btn btn-outline-primary btn-sm">Register</button>
     <p class="mt-3" *ngIf="responseMessage && !isRegistered">{{ responseMessage }}</p>
     <p class="mt-3" *ngIf="isRegistered">Registered successfully.</p>
     <a *ngIf="isRegistered" (click)="goToLogin()" class="btn btn-link">Please click here to login.</a>
