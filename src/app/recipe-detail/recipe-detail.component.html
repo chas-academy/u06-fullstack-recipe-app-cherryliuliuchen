@@ -1,0 +1,19 @@
+<div *ngIf="recipe" class="container mt-4">
+  <h2>{{ recipe.label }}</h2>
+  <img [src]="recipe.image" class="img-fluid" alt="{{ recipe.label }}">
+  <p><strong>Source:</strong> <a [href]="recipe.url" target="_blank">{{ recipe.source }}</a></p>
+  
+  <h3>Ingredients</h3>
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredientLines">{{ ingredient }}</li>
+  </ul>
+  
+  <h3>Health Labels</h3>
+  <ul>
+    <li *ngFor="let label of recipe.healthLabels">{{ label }}</li>
+  </ul>
+  
+  <h3>Nutritional Information</h3>
+  <p><strong>Calories:</strong> {{ recipe.calories | number:'1.0-0' }}</p>
+  <p><strong>Total Weight:</strong> {{ recipe.totalWeight | number:'1.0-0' }} grams</p>
+</div>

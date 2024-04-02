@@ -1,0 +1,19 @@
+<div class="register-form container mt-5">
+    <h2 class="mb-3">Register</h2>
+    <div class="mb-3">
+        <input type="text" [(ngModel)]="name" class="form-control" placeholder="Name" required>
+    </div>
+    <div class="mb-3">
+        <input type="email" [(ngModel)]="email" class="form-control" placeholder="Email" required>
+    </div>
+    <div class="mb-3">
+        <input type="password" [(ngModel)]="password" class="form-control" placeholder="Password" required>
+    </div>
+    <div class="mb-3">
+        <input type="password" [(ngModel)]="passwordConfirmation" class="form-control" placeholder="Confirm Password" required>
+    </div>
+    <button (click)="register()" class="btn btn-primary">Register</button>
+    <p class="mt-3" *ngIf="responseMessage && !isRegistered">{{ responseMessage }}</p>
+    <p class="mt-3" *ngIf="isRegistered">Registered successfully.</p>
+    <a *ngIf="isRegistered" (click)="goToLogin()" class="btn btn-link">Please click here to login.</a>
+</div>

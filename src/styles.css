@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+.filter-value {
+    color: #004085; /* 特别深的蓝色, 你可以根据需要调整颜色代码 */
+    font-weight: bold; /* 粗体字 */
+  }
+  

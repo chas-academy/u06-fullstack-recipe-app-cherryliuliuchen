@@ -1,0 +1,70 @@
+
+<div class="container">
+  <div class="row mb-3 text-center">
+    <div class="col">
+      <h5>Popular American Recipe</h5>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row mb-3">
+    <div class="col">
+      <h5>DishType: </h5>
+      <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('dishType', 'starter')" [disabled]="isDishTypeDisabled('main course') || isDishTypeDisabled('dessert')">Starter</button>
+      <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('dishType', 'main course')" [disabled]="isDishTypeDisabled('starter') || isDishTypeDisabled('dessert')">Main Course</button>
+      <button class="btn btn-outline-primary btn-sm" (click)="filterRecipes('dishType', 'dessert')" [disabled]="isDishTypeDisabled('starter') || isDishTypeDisabled('main course')">Dessert</button>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <h5>Allergy and Dietary Choices:</h5>
+      <h6>Filter by Allergy</h6>
+      <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('health', 'gluten-free')" [disabled]="isHealthFilterDisabled('peanut-free') || isHealthFilterDisabled('vegetarian')">No Gluten</button>
+      <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('health', 'peanut-free')" [disabled]="isHealthFilterDisabled('gluten-free') || isHealthFilterDisabled('vegetarian')">No Nuts</button>
+      <button class="btn btn-outline-primary btn-sm" (click)="filterRecipes('health', 'vegetarian')" [disabled]="isHealthFilterDisabled('gluten-free') || isHealthFilterDisabled('peanut-free')">Vegetarian</button>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <h6>Filter by Dietary Choice</h6>
+      <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('diet', 'balanced')" [disabled]="isDietFilterDisabled('high-fiber') || isDietFilterDisabled('high-protein')">Balanced</button>
+      <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('diet', 'high-fiber')" [disabled]="isDietFilterDisabled('balanced') || isDietFilterDisabled('high-protein')">High Fiber</button>
+      <button class="btn btn-outline-primary btn-sm" (click)="filterRecipes('diet', 'high-protein')" [disabled]="isDietFilterDisabled('balanced') || isDietFilterDisabled('high-fiber')">High Protein</button>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <h5>Reset Filters</h5>
+    <div class="col">
+      <button class="btn btn-outline-primary btn-sm" (click)="resetFilters()">Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="current-filters text-primary">
+  <h5>Current Filters :</h5>
+  <span>DishType: <span class="filter-value">{{ selectedDishType || 'None' }}</span>;  </span>
+  <span>Allergic requirement: <span class="filter-value">{{ selectedHealthFilter || 'None' }}</span>;  </span>
+  <span>Diet requirement: <span class="filter-value">{{ selectedDietFilter || 'None' }}</span></span>
+</div>
+
+<div *ngIf="recipes && recipes.length > 0" class="row row-cols-1 row-cols-md-2 g-4">
+  <div *ngFor="let recipe of recipes; let i = index" class="col">
+    <div class="card h-100" style="max-width: 540px; margin: auto;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ recipe.image }}" class="img-fluid rounded-start" alt="{{ recipe.label }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><a [routerLink]="['/recipe', recipe.id]" class="stretched-link">{{ recipe.label }}</a></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

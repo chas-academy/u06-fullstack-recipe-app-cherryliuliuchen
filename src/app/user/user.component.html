@@ -1,0 +1,26 @@
+<!-- Login form -->
+<div class="user-form" *ngIf="!token">
+  <h2>Login</h2>
+  <form>
+    <div class="mb-3">
+      <input type="email" [(ngModel)]="loginEmail" class="form-control" placeholder="Email" name="email">
+    </div>
+    <div class="mb-3">
+      <input type="password" [(ngModel)]="loginPassword" class="form-control" placeholder="Password" name="password">
+    </div>
+    <button (click)="login()" class="btn btn-primary">Login</button>
+  </form>
+  <!-- <p class="mt-3"> <a (click)="goToRegister()">If you do not have an account, please click here to register first. </a>.</p> -->
+  <p class="mt-3"> <a (click)="goToRegister()" style="text-decoration: underline;">If you do not have an account, please click here to register first.</a>.</p>
+
+</div>
+
+<!-- Logout button -->
+<div *ngIf="token" class="mt-3">
+  <button (click)="logout()" class="btn btn-warning">Logout</button>
+</div>
+
+<!-- Response Message -->
+<div *ngIf="responseMessage" class="alert alert-info mt-3">
+  {{ responseMessage }}
+</div>
