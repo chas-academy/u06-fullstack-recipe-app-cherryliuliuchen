@@ -34,11 +34,11 @@ export class RegisterComponent {
           this.responseMessage = 'Registered successfully.';
           this.isRegistered = true; // To show the login ref
         } else {
-          this.responseMessage = "Registration failed, please try later.";
+          this.responseMessage = "Registration failed, please try again.";
         }
       },
       error: (error: any) => {
-        this.responseMessage = "Registration failed, please try later.";
+        this.responseMessage = "Registration failed, please try again.";
       }
     });
   }
