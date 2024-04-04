@@ -7,10 +7,12 @@ import { RecipeService } from '../recipe.service';
   selector: 'app-recipe-detail',
   standalone: true,
   imports: [CommonModule],
+  //Link this file with html file
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
+  //Defines a property called recipe
   recipe: any;
 
   constructor(
@@ -18,6 +20,7 @@ export class RecipeDetailComponent implements OnInit {
     private recipeService: RecipeService
   ) {}
 
+  // Angular will use the ngOnInit after component initialization
   ngOnInit(): void {
     // Get recipe id from route parameter
     const recipeId = this.route.snapshot.paramMap.get('id');

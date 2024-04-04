@@ -9,6 +9,8 @@
   <div class="row mb-3">
     <div class="col">
       <h5>DishType: </h5>
+      <!-- When user click starter button, use the filterRecipes function in the all-recipe component-->
+      <!-- If the function isDishTypeDisabled return, the button will be set as disabled-->
       <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('dishType', 'starter')" [disabled]="isDishTypeDisabled('main course') || isDishTypeDisabled('dessert')">Starter</button>
       <button class="btn btn-outline-primary btn-sm me-2" (click)="filterRecipes('dishType', 'main course')" [disabled]="isDishTypeDisabled('starter') || isDishTypeDisabled('dessert')">Main Course</button>
       <button class="btn btn-outline-primary btn-sm" (click)="filterRecipes('dishType', 'dessert')" [disabled]="isDishTypeDisabled('starter') || isDishTypeDisabled('main course')">Dessert</button>
@@ -50,6 +52,7 @@
 </div>
 
 <div *ngIf="recipes && recipes.length > 0" class="row row-cols-1 row-cols-md-2 g-4">
+  <!-- ngFor is a structural directive, it iterate recipes. Create div for each recipe. -->
   <div *ngFor="let recipe of recipes; let i = index" class="col">
     <div class="card h-100" style="max-width: 540px; margin: auto;">
       <div class="row g-0">
@@ -58,6 +61,7 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
+            <!-- Each link will be dynamically generated based on the id of the corresponding recipe -->
             <h5 class="card-title"><a [routerLink]="['/recipe', recipe.id]" class="stretched-link">{{ recipe.label }}</a></h5>
           </div>
         </div>

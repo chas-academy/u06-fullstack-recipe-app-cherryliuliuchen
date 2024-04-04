@@ -8,8 +8,6 @@ import { RegisterComponent } from './register/register.component';
 
 //Configure the path
 export const routes: Routes = [
-  // { path: '', component: RecommendationComponent, pathMatch: 'full' },
-  // { path: 'allrecipe', component: AllRecipeComponent },
   { path: '', component: AllRecipeComponent, pathMatch: 'full' },
   { path: 'recomendation', component: RecommendationComponent },
   { path: 'recipe/:id', component: RecipeDetailComponent },
@@ -17,6 +15,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent},
 ];
 
+// The main function is to encapsulate routing configuration so that the root module AppModule can set the routing of the entire application by simply importing AppRoutingModule.
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

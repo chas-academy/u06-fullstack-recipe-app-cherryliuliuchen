@@ -27,7 +27,9 @@ export class RegisterComponent {
       email: this.email,
       password: this.password,
       password_confirmation: this.passwordConfirmation
+      // Used to handle asynchronous operations in Angular
     }).subscribe({
+      // The next function receives the response returned from the server and updates the component's state accordingly
       next: (response: any) => {
         if (response.user && response.token) {
           // If the response contains user and token, is registered 

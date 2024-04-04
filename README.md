@@ -1,7 +1,7 @@
 # Technical Project Description for tastetime APP
 
 > App Link
-[frontend in netlify](https://cheerful-pasca-6e4742.netlify.app/)
+[frontend in netlify](https://cheerful-pasca-6e4742.netlify.app/) & 
 [backend in render](https://u06-fullstack-recipe-app-cherryliuliuchen.onrender.com/api/register)
 
 ## Executive Summary
@@ -49,11 +49,6 @@
 > ##### Third, user can logout.
 <img src="src/assets/images/logout.jpg" alt="Register Page" width="200"/>
 
-## Version Information
-> Draft version 29th Mar,2024  
-> Update the user interface 2th Apr,2024  
-> Final version 3rd Apr,2024
-
 ## How to download and build locally
 > This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
 
@@ -65,5 +60,15 @@
 
 ###  Build
 > Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+###  Modify environments information
+> If you want to change the APIKey, modify it in tastetime\src\environments\environment.ts
+<img src="src/assets/images/image.png" alt="Register Page" width="200"/>
+
+
+## Version Information
+> Draft version 29th Mar,2024  
+> Update the user interface 2th Apr,2024  
+> Final version 3rd Apr,2024
 
 

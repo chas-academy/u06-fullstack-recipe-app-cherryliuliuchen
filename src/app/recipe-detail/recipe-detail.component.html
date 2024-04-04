@@ -1,3 +1,4 @@
+<!-- Make sure recipe has the data -->
 <div *ngIf="recipe" class="container mt-4">
   <h2>{{ recipe.label }}</h2>
   <img [src]="recipe.image" class="img-fluid" alt="{{ recipe.label }}">
@@ -5,6 +6,7 @@
   
   <h3>Ingredients</h3>
   <ul>
+    <!-- Traverse array recipe.ingredientLines array-->
     <li *ngFor="let ingredient of recipe.ingredientLines">{{ ingredient }}</li>
   </ul>
   
@@ -14,6 +16,7 @@
   </ul>
   
   <h3>Nutritional Information</h3>
+  <!-- Formatted as a number without decimals. -->
   <p><strong>Calories:</strong> {{ recipe.calories | number:'1.0-0' }}</p>
   <p><strong>Total Weight:</strong> {{ recipe.totalWeight | number:'1.0-0' }} grams</p>
 </div>
