@@ -12,11 +12,6 @@
 ### Technical Architecture
 > The taste application follows a client-server architecture. The client-side is implemented using HTML for structure, bootstrap for styling, and PHP for server-side scripting. The web interface is designed to be responsive and user-friendly, supporting various devices and screen sizes.
 
-### Frontend Structure Diagram
-> Below is the ER diagram for database
-![This is pic](pic/ER.jpg "pic ")
-
-
 ## Modules
 ### Functional Overview
 > The application comprises several key modules, each serving a specific purpose for users. These modules include Recipe, Recommendations for you, Recipe details and Sign in. Users can register, login and logout.
@@ -28,7 +23,7 @@
 
 #### Recommendations for you
 > Users can see the recomendations on this page.
-![alt text](src/assets/images/recommendation.jpg)
+![alt text](src/assets/images/recommendations.jpg)
 
 #### Recipe details
 > Users can click the link on Recipe page and Recomendations page. Users can see the details on this page.
